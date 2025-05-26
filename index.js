@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 // import { initializeInterfaceLayer } from './interface/index.js';
 import { initMongoDB } from './config/mongo_db_connections.js';
+import authRoutes from './routes/authroutes.js';
+import sellerRoutes from "./routes/sellerRoutes.js"
 const app = express();
 
 app.use(cors({
@@ -11,6 +13,9 @@ app.use(cors({
 
 
 app.use(express.json());
+app.use('/',authRoutes)
+
+app.use('/seller', sellerRoutes);
 initMongoDB()
 
 

@@ -3,12 +3,9 @@ import mongoose from 'mongoose';
 
 export const initMongoDB = async () => {
   try {
-    const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://passward:<EMKNAZnDJAWOc6x8>@ecommercecluster.bbvzxmv.mongodb.net/?retryWrites=true&w=majority&appName=EcommerceCluster';
+    const MONGO_URI = 'mongodb+srv://srilekhavenu7:DDA2eagmaLx1ocdl@ecommercecluster.bbvzxmv.mongodb.net/ecommerce'
     
-    await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
+    await mongoose.connect(MONGO_URI);
 
     console.log('MongoDB connected successfully');
   } catch (error) {
